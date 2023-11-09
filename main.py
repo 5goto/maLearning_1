@@ -37,11 +37,7 @@ def build_and_show_pair(data):
 
 
 def build_and_show_bar_cart(data):
-    class_counts = data['classification'].value_counts()
-    class_counts.plot(kind='bar')
-    plt.title('Распределение классов')
-    plt.xlabel('Класс')
-    plt.ylabel('Количество')
+    sns.pairplot(data, kind="scatter", hue="attention", plot_kws=dict(s=80, edgecolor="white", linewidth=2.5))
     plt.show()
 
 
